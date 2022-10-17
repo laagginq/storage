@@ -1,3 +1,15 @@
+--// lol i know i used moonsec my luraph expired but use this dont use the obfuscated source
+
+--[[
+
+_G.Settings = {
+    Prediction = 0.11137,
+    UiToggleKey = Enum.KeyCode.RightShift,
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/laagginq/storage/main/HoodCustomSilentAim.lua", true))()
+
+]]
+
 _, Protected_by_MoonSecV2, Discord = 'discord.gg/gQEH2uZxUk'
 
 
