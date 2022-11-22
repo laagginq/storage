@@ -20,9 +20,9 @@ local library = {
     ended = {},
     colors = {},
     folders = {
-        main = "informant",
-        assets = "informant/assets",
-        configs = "informant/configs"
+        main = "informant_workspace/ui",
+        assets = "informant_workspace/ui/assets",
+        configs = "informant_workspace/ui/configs"
     },
     shared = {
         initialized = false,
