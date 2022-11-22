@@ -281,7 +281,7 @@ end
 -- Scripts
 
 Inviter.Gui = SelfModules.UI.Create("ScreenGui", {
-	Name = "Vynixu's Discord Inviter",
+	Name = "Discord Inviter",
 	ZIndexBehavior = Enum.ZIndexBehavior.Sibling,
 })
 
