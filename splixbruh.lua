@@ -20,9 +20,9 @@ local library = {
     ended = {},
     colors = {},
     folders = {
-        main = "r3zkoclient",
-        assets = "r3zkoclient/assets",
-        configs = "r3zkoclient/configs"
+        main = "informant",
+        assets = "informant/assets",
+        configs = "informant/configs"
     },
     shared = {
         initialized = false,
@@ -780,7 +780,7 @@ do
                 library.shared.ping = stats.Network:FindFirstChild("ServerStatsItem") and tostring(math.floor(stats.Network.ServerStatsItem["Data Ping"]:GetValue())) or "Unknown"
                 --
                 if (tick() - Tick) > 0.15 then
-                    watermark_title.Text = string.format("r3zkoclient | Ping : %s | Fps : %u", library.shared.ping, library.shared.fps)
+                    watermark_title.Text = string.format("informant.wtf | Ping : %s | FPS : %u", library.shared.ping, library.shared.fps)
                     window.watermark:UpdateSize()
                     --
                     Tick = tick()
