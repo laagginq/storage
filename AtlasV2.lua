@@ -1871,14 +1871,15 @@ end
 
                         function element:remove_value(v)
                            if ScrollFrame:FindFirstChild(v) then 
+                              ScrollFrame.CanvasSize = ScrollFrame.CanvasSize - UDim2.new(0, 0, 0, 20)
                               ScrollFrame:FindFirstChild(v):Destroy()
                            end
                         end
                         
-                        function element:clear_value(v)
+                        function element:clear_value()
                            for i,v in pairs(ScrollFrame:GetChildren()) do 
                               if v:IsA("TextButton") then 
-                                 v:Destroy()
+                                 element:remove_value(v.Name)
                               end
                            end
                         end
