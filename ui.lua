@@ -1,4 +1,4 @@
--- // Pollux / Kittenassist shitty ui "private" source code :clown:
+-- // Pollux / Kittenassist shitty "private" ui source code :clown:
 
 local PCR_1 = Instance.new("ScreenGui")
 local TweenService = game:GetService('TweenService');
