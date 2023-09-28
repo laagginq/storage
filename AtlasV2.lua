@@ -144,6 +144,17 @@ function library.new(library_title, cfg_location)
 		syn.protect_gui(ScreenGui)
 	end
 
+    local Cursor = library:create("ImageLabel", {
+        Name = "Cursor",
+        BackgroundTransparency = 1,
+        Size = UDim2.new(0, 17, 0, 17),
+        Image = "rbxassetid://7205257578",
+        ZIndex = 6969,
+    }, ScreenGui)
+
+    rs.RenderStepped:Connect(function()
+        Cursor.Position = UDim2.new(0, mouse.X, 0, mouse.Y + 36)
+    end)
 
 	ScreenGui.Parent = game:GetService("CoreGui")
 
@@ -1856,6 +1867,20 @@ end
                                 Decoration.Visible = true
                                 ButtonText.TextColor3 = Color3.fromRGB(255, 255, 255)
                             end
+                        end
+
+                        function element:remove_value(v)
+                           if ScrollFrame:FindFirstChild(v) then 
+                              ScrollFrame:FindFirstChild(v):Destroy()
+                           end
+                        end
+                        
+                        function element:clear_value(v)
+                           for i,v in pairs(ScrollFrame:GetChildren()) do 
+                              if v:IsA("TextButton") then 
+                                 v:Destroy()
+                              end
+                           end
                         end
 
                         function element:set_value(new_value, cb)
