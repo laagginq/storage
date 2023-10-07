@@ -108,10 +108,10 @@ function library.new(library_title, cfg_location)
             end
         end
 
-        writefile(cfg_location..cfg_name..".txt", http:JSONEncode(values_copy))
+        writefile(cfg_location.."/settings"..cfg_name..".txt", http:JSONEncode(values_copy))
     end
     function menu.load_cfg(cfg_name)
-        local new_values = http:JSONDecode(readfile(cfg_location..cfg_name..".txt"))
+        local new_values = http:JSONDecode(readfile(cfg_location.."/settings"..cfg_name..".txt"))
 
         for _,tab in next, new_values do
             for _2,section in next, tab do
