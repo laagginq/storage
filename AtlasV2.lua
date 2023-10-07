@@ -83,6 +83,11 @@ function library.new(library_title, cfg_location)
     if not isfolder(cfg_location) then
         makefolder(cfg_location)
     end
+
+    if not isfolder(cfg_location.."/settings") then
+        makefolder(cfg_location.."/settings")
+    end
+    
     
     function menu.copy(original)
         local copy = {}
