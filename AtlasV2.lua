@@ -149,7 +149,7 @@ function library.new(library_title, cfg_location)
 		syn.protect_gui(ScreenGui)
 	end
 
-    local Cursor = library:create("ImageLabel", {
+    --[[local Cursor = library:create("ImageLabel", {
         Name = "Cursor",
         BackgroundTransparency = 1,
         Size = UDim2.new(0, 17, 0, 17),
@@ -159,7 +159,7 @@ function library.new(library_title, cfg_location)
 
     rs.RenderStepped:Connect(function()
         Cursor.Position = UDim2.new(0, mouse.X, 0, mouse.Y + 36)
-    end)
+    end)]]
 
 	ScreenGui.Parent = game:GetService("CoreGui")
 
