@@ -207,7 +207,7 @@ function library.new(library_title, cfg_location)
         BackgroundTransparency = 1,
         Position = UDim2.new(0.5, 0, 0, 0),
         Size = UDim2.new(1, -22, 0, 30),
-        Font = Enum.Font.Ubuntu,
+        Font = Enum.Font.Code,
         Text = library_title,
         TextColor3 = Color3.fromRGB(255, 255, 255),
         TextSize = 16,
@@ -341,7 +341,7 @@ end
                 Name = "SectionButton",
                 BackgroundTransparency = 1,
                 Size = UDim2.new(1/num_sections, 0, 1, 0),
-                Font = Enum.Font.Ubuntu,
+                Font = Enum.Font.Code,
                 Text = section_name,
                 TextColor3 = Color3.fromRGB(100, 100, 100),
                 TextSize = 15,
@@ -472,7 +472,7 @@ end
                     BackgroundTransparency = 1,
                     Position = UDim2.new(0.5, 0, 0, -8),
                     Size = UDim2.new(1, 0, 0, 15),
-                    Font = Enum.Font.Ubuntu,
+                    Font = Enum.Font.Code,
                     Text = sector_name,
                     TextColor3 = Color3.fromRGB(255, 255, 255),
                     TextSize = 14,
@@ -558,7 +558,7 @@ end
                             BackgroundTransparency = 1,
                             Position = UDim2.new(0, 27, 0, 5),
                             Size = UDim2.new(0, 200, 0, 9),
-                            Font = Enum.Font.Ubuntu,
+                            Font = Enum.Font.Code,
                             Text = text,
                             TextColor3 = Color3.fromRGB(150, 150, 150),
                             TextSize = 14,
@@ -616,7 +616,7 @@ end
                                 BackgroundTransparency = 1,
                                 Position = UDim2.new(0, 265, 0, 0),
                                 Size = UDim2.new(0, 56, 0, 20),
-                                Font = Enum.Font.Ubuntu,
+                                Font = Enum.Font.Code,
                                 Text = "[ NONE ]",
                                 TextColor3 = Color3.fromRGB(150, 150, 150),
                                 TextSize = 14,
@@ -668,7 +668,7 @@ end
                                 Name = "Always",
                                 BackgroundTransparency = 1,
                                 Size = UDim2.new(1, 0, 0, 25),
-                                Font = Enum.Font.Ubuntu,
+                                Font = Enum.Font.Code,
                                 Text = "Always",
                                 TextColor3 = Color3.fromRGB(111, 50, 168),
                                 TextSize = 14,
@@ -679,7 +679,7 @@ end
                                 Name = "Hold",
                                 BackgroundTransparency = 1,
                                 Size = UDim2.new(1, 0, 0, 25),
-                                Font = Enum.Font.Ubuntu,
+                                Font = Enum.Font.Code,
                                 Text = "Hold",
                                 TextColor3 = Color3.fromRGB(150, 150, 150),
                                 TextSize = 14,
@@ -690,7 +690,7 @@ end
                                 Name = "Toggle",
                                 BackgroundTransparency = 1,
                                 Size = UDim2.new(1, 0, 0, 25),
-                                Font = Enum.Font.Ubuntu,
+                                Font = Enum.Font.Code,
                                 Text = "Toggle",
                                 TextColor3 = Color3.fromRGB(150, 150, 150),
                                 TextSize = 14,
@@ -736,12 +736,12 @@ end
 
                                     local new_value = input.KeyCode.Name ~= "Unknown" and input.KeyCode.Name or input.UserInputType.Name
                                     Keybind.Text = "[ "..new_value:upper().." ]"
-									Keybind.Size = UDim2.new(0, library:get_text_size(Keybind.Text, 14, Enum.Font.Ubuntu, Vector2.new(700, 20)).X + 3, 0, 20)
+									Keybind.Size = UDim2.new(0, library:get_text_size(Keybind.Text, 14, Enum.Font.Code, Vector2.new(700, 20)).X + 3, 0, 20)
 									extra_value.Key = new_value
 
 									if new_value == "Backspace" then
 										Keybind.Text = "[ NONE ]"
-										Keybind.Size = UDim2.new(0, library:get_text_size(Keybind.Text, 14, Enum.Font.Ubuntu, Vector2.new(700, 20)).X + 3, 0, 20)
+										Keybind.Size = UDim2.new(0, library:get_text_size(Keybind.Text, 14, Enum.Font.Code, Vector2.new(700, 20)).X + 3, 0, 20)
 										extra_value.Key = nil
 									end
 
@@ -778,7 +778,7 @@ end
 									wait()
 									is_binding = true
 									Keybind.Text = "[ ... ]"
-									Keybind.Size = UDim2.new(0, library:get_text_size("[ ... ]", 14, Enum.Font.Ubuntu, Vector2.new(700, 20)).X + 3,0, 20)
+									Keybind.Size = UDim2.new(0, library:get_text_size("[ ... ]", 14, Enum.Font.Code, Vector2.new(700, 20)).X + 3,0, 20)
 								end
 							end)
 
@@ -803,7 +803,7 @@ end
 
                                 local key = extra_value.Key ~= nil and extra_value.Key or "NONE"
                                 Keybind.Text = "[ "..key:upper().." ]"
-                                Keybind.Size = UDim2.new(0, library:get_text_size(Keybind.Text, 14, Enum.Font.Ubuntu, Vector2.new(700, 20)).X + 3, 0, 20)
+                                Keybind.Size = UDim2.new(0, library:get_text_size(Keybind.Text, 14, Enum.Font.Code, Vector2.new(700, 20)).X + 3, 0, 20)
     
                                 if cb == nil or not cb then
                                     key_callback(extra_value)
@@ -836,7 +836,7 @@ end
                                 Position = UDim2.new(0, 265, 0.5, 0),
                                 Size = UDim2.new(0, 35, 0, 11),
                                 AutoButtonColor = false,
-                                Font = Enum.Font.Ubuntu,
+                                Font = Enum.Font.Code,
                                 Text = "",
                                 TextXAlignment = Enum.TextXAlignment.Right,
                             }, ToggleButton)
@@ -1125,7 +1125,7 @@ end
                             BackgroundTransparency = 1,
                             Position = UDim2.new(0, 6, 0, 0),
                             Size = UDim2.new(0, 250, 1, 0),
-                            Font = Enum.Font.Ubuntu,
+                            Font = Enum.Font.Code,
                             Text = value.Dropdown,
                             TextColor3 = Color3.fromRGB(150, 150, 150),
                             TextSize = 14,
@@ -1144,7 +1144,7 @@ end
                             BackgroundTransparency = 1,
                             Position = UDim2.new(0, 9, 0, 6),
                             Size = UDim2.new(0, 200, 0, 9),
-                            Font = Enum.Font.Ubuntu,
+                            Font = Enum.Font.Code,
                             Text = text,
                             TextColor3 = Color3.fromRGB(150, 150, 150),
                             TextSize = 14,
@@ -1251,7 +1251,7 @@ end
                                 BackgroundTransparency = 1,
                                 Position = UDim2.new(0, 8, 0, 0),
                                 Size = UDim2.new(0, 245, 1, 0),
-                                Font = Enum.Font.Ubuntu,
+                                Font = Enum.Font.Code,
                                 Text = v,
                                 TextColor3 = Color3.fromRGB(150, 150, 150),
                                 TextSize = 14,
@@ -1331,7 +1331,7 @@ end
                             BackgroundTransparency = 1,
                             Position = UDim2.new(0, 6, 0, 0),
                             Size = UDim2.new(0, 250, 1, 0),
-                            Font = Enum.Font.Ubuntu,
+                            Font = Enum.Font.Code,
                             Text = value.Dropdown,
                             TextColor3 = Color3.fromRGB(150, 150, 150),
                             TextSize = 14,
@@ -1350,7 +1350,7 @@ end
                             BackgroundTransparency = 1,
                             Position = UDim2.new(0, 9, 0, 6),
                             Size = UDim2.new(0, 200, 0, 9),
-                            Font = Enum.Font.Ubuntu,
+                            Font = Enum.Font.Code,
                             Text = text,
                             TextColor3 = Color3.fromRGB(150, 150, 150),
                             TextSize = 14,
@@ -1500,7 +1500,7 @@ end
                                 BackgroundTransparency = 1,
                                 Position = UDim2.new(0, 8, 0, 0),
                                 Size = UDim2.new(0, 245, 1, 0),
-                                Font = Enum.Font.Ubuntu,
+                                Font = Enum.Font.Code,
                                 Text = v,
                                 TextColor3 = Color3.fromRGB(150, 150, 150),
                                 TextSize = 14,
@@ -1569,7 +1569,7 @@ end
                             Position = UDim2.new(0.5, 0, 0.5, 0),
                             Size = UDim2.new(0, 215, 0, 20),
                             AutoButtonColor = false,
-                            Font = Enum.Font.Ubuntu,
+                            Font = Enum.Font.Code,
                             Text = text,
                             TextColor3 = Color3.fromRGB(150, 150, 150),
                             TextSize = 14,
@@ -1617,7 +1617,7 @@ end
                             BorderColor3 = Color3.fromRGB(0, 0, 0),
                             Position = UDim2.new(0.5, 0, 0.5, 0),
                             Size = UDim2.new(0, 215, 0, 20),
-                            Font = Enum.Font.Ubuntu,
+                            Font = Enum.Font.Code,
                             Text = text,
                             TextColor3 = Color3.fromRGB(150, 150, 150),
                             TextSize = 14,
@@ -1735,7 +1735,7 @@ end
                                 BackgroundTransparency = 1,
                                 Position = UDim2.new(0, 7, 0, 0),
                                 Size = UDim2.new(0, 210, 1, 0),
-                                Font = Enum.Font.Ubuntu,
+                                Font = Enum.Font.Code,
                                 Text = v,
                                 TextColor3 = Color3.fromRGB(150, 150, 150),
                                 TextSize = 14,
@@ -1813,7 +1813,7 @@ end
                                 BackgroundTransparency = 1,
                                 Position = UDim2.new(0, 7, 0, 0),
                                 Size = UDim2.new(0, 210, 1, 0),
-                                Font = Enum.Font.Ubuntu,
+                                Font = Enum.Font.Code,
                                 Text = v,
                                 TextColor3 = Color3.fromRGB(150, 150, 150),
                                 TextSize = 14,
@@ -1928,7 +1928,7 @@ end
                             BackgroundTransparency = 1,
                             Position = UDim2.new(0, 9, 0, 6),
                             Size = UDim2.new(0, 200, 0, 9),
-                            Font = Enum.Font.Ubuntu,
+                            Font = Enum.Font.Code,
                             Text = text,
                             TextColor3 = Color3.fromRGB(150, 150, 150),
                             TextSize = 14,
@@ -1963,7 +1963,7 @@ end
                             BackgroundTransparency = 1,
                             Position = UDim2.new(0, 69, 0, 6),
                             Size = UDim2.new(0, 200, 0, 9),
-                            Font = Enum.Font.Ubuntu,
+                            Font = Enum.Font.Code,
                             Text = value.Slider,
                             TextColor3 = Color3.fromRGB(150, 150, 150),
                             TextSize = 14,
