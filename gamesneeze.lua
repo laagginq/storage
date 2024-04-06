@@ -1,6 +1,20 @@
 --[[
-    @$$$
+    @$$$.lua
 ]]
+
+local FontsRepo = "https://raw.githubusercontent.com/laagginq/Alysum/main/backend/fonts/"
+
+local CustomFont = Drawing.new("Font", "FiraCode")
+
+if string.match(identifyexecutor(),"Krampus") then 
+   --CustomFont.Data = game:HttpGet("http://themes.googleusercontent.com/static/fonts/abeezee/v1/JYPhMn-3Xw-JGuyB-fEdNA.ttf")
+   CustomFont.Data = game:HttpGet(FontsRepo.."FiraCode-Regular.ttf")
+   deb("Loaded Custom Font")
+else
+   CustomFont = CustomFont
+   deb("Loaded Default Font")
+end
+
 -- // Variables
 local ws, uis, rs, hs, cas, plrs, stats = game:GetService("Workspace"), game:GetService("UserInputService"), game:GetService("RunService"), game:GetService("HttpService"), game:GetService("ContextActionService"), game:GetService("Players"), game:GetService("Stats")
 --
@@ -69,7 +83,7 @@ local theme = {
     textdark = Color3.fromRGB(175, 175, 175),
     textborder = Color3.fromRGB(0, 0, 0),
     cursoroutline = Color3.fromRGB(10, 10, 10),
-    font = 2,
+    font = CustomFont,
     textsize = 13
 }
 -- // utility Functions
@@ -126,7 +140,7 @@ do
             instance = frame
         elseif instanceType == "TextLabel" or instanceType == "textlabel" then
             local text = Drawing.new("Text")
-            text.Font = 3
+            text.Font = CustomFont
             text.Visible = true
             text.Outline = true
             text.Center = false
