@@ -1,5 +1,5 @@
 --[[
-    @gs.cc
+    @$$$
 ]]
 -- // Variables
 local ws, uis, rs, hs, cas, plrs, stats = game:GetService("Workspace"), game:GetService("UserInputService"), game:GetService("RunService"), game:GetService("HttpService"), game:GetService("ContextActionService"), game:GetService("Players"), game:GetService("Stats")
@@ -25,9 +25,9 @@ local library = {
     hovers = {},
     Relations = {},
     folders = {
-        main = "alysum_loader",
-        assets = "alysum_loader/Images",
-        configs = "alysum_loader/Configs"
+        main = "dsdsds",
+        assets = "dsdsds/Images",
+        configs = "dsdsds/Configs"
     },
     shared = {
         initialized = false,
@@ -1073,10 +1073,7 @@ do
                     }
                 }
             }
-            --Create("Frame", {Vector2.new(4,18), esppreview_inner}, {
-                Size = utility:Size(1, -8, 1, -22, esppreview_inner),
-                Position = utility:Position(0, 4, 0, 18, esppreview_inner),
-                Color = theme.inline
+            --
             local esppreview_frame = utility:Create("Frame", {Vector2.new(main_frame.Size.X + 5,0), main_frame}, {
                 Size = utility:Size(0, 236, 0, 339),
                 Position = utility:Position(1, 5, 0, 0, main_frame),
@@ -1130,7 +1127,10 @@ do
                 Color = "textcolor"
             }
             --
-            local esppreview_inner_inline = utility:
+            local esppreview_inner_inline = utility:Create("Frame", {Vector2.new(4,18), esppreview_inner}, {
+                Size = utility:Size(1, -8, 1, -22, esppreview_inner),
+                Position = utility:Position(0, 4, 0, 18, esppreview_inner),
+                Color = theme.inline
             }, window.VisualPreview.Drawings)
             --
             library.colors[esppreview_inner_inline] = {
