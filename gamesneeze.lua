@@ -6,9 +6,9 @@ local FontsRepo = "https://raw.githubusercontent.com/laagginq/Alysum/main/backen
 
 local CustomFont = Drawing.new("Font", "FiraCode")
 
-if string.match(identifyexecutor(),"Krampus") then 
+if string.match(identifyexecutor(),"IBMPLex") then 
    --CustomFont.Data = game:HttpGet("http://themes.googleusercontent.com/static/fonts/abeezee/v1/JYPhMn-3Xw-JGuyB-fEdNA.ttf")
-   CustomFont.Data = game:HttpGet(FontsRepo.."FiraCode-Regular.ttf")
+   CustomFont.Data = game:HttpGet(FontsRepo.."IBMPlexSerif-Thin.ttf")
    deb("Loaded Custom Font")
 else
    CustomFont = CustomFont
