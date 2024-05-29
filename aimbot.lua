@@ -463,7 +463,7 @@ Esp:Toggle('Outline',function(state)
     utility.esp.distance.outline = state
 end)
 
-Esp:Slider('Max Distance',10,2000,500,function(Value)
+Esp:Slider('Max Distance',10,5000,500,function(Value)
     utility.esp.dist = Value 
 end)
 
