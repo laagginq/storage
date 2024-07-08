@@ -5501,8 +5501,7 @@ do
     end
 
     -- Unfinished
-    -- DROPDOWN
-    --[[
+
     do 
         local dropdown = {} do 
             dropdown.__index = dropdown 
@@ -5830,7 +5829,6 @@ do
         -- add class
         elemClasses.dropdown = dropdown
     end    
-    ]]
 
     -- SLIDER
     do 
