@@ -31,14 +31,14 @@ getgenv().esp = {
         ['nametag']  = { enabled = true, position = 'top', order = 1 },
         ['name']     = { enabled = true, position = 'top', order = 2 },
         ['health']   = { enabled = true, position = 'left', order = 1, bar = 'health' },
-        ['armor']    = { enabled = true, position = 'left', order = 2, bar = 'armor' },
+        ['armor']    = { enabled = false, position = 'left', order = 2, bar = 'armor' },
         ['tool']     = { enabled = true, position = 'bottom', suffix = '', prefix = '', order = 1 },
         ['distance'] = { enabled = false, position = 'bottom', suffix = 'm', order = 2 },
     },
 
     BarLayout = {
         ['health'] = { enabled = true, position = 'left', order = 1, color_empty = Color3.fromRGB(176, 84, 84), color_full = Color3.fromRGB(140, 250, 140) },
-        ['armor']  = { enabled = true, position = 'left', order = 2, color_empty = Color3.fromRGB(58, 58, 97), color_full = Color3.fromRGB(72, 72, 250) }
+        ['armor']  = { enabled = false, position = 'left', order = 2, color_empty = Color3.fromRGB(58, 58, 97), color_full = Color3.fromRGB(72, 72, 250) }
     }
     
 }
