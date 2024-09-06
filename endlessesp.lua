@@ -7,38 +7,36 @@ getgenv().esp = {
 
     PriorityColor = Color3.new(1,0.25,0.25),
 
-    BoxEnabled = false,
-    BoxCorners = false,
-    BoxDynamic = false,
+    BoxEnabled = true,
+    BoxCorners = true,
+    BoxDynamic = true,
     BoxStaticXFactor = 1.3,
     BoxStaticYFactor = 2.1,
     BoxColor = Color3.fromRGB(255, 255, 255),
     
-    SkeletonEnabled = false,
+    SkeletonEnabled = true,
     SkeletonColor = Color3.fromRGB(255, 255, 255),
     SkeletonMaxDistance = 300,
 
-    ChamsEnabled = false,
+    ChamsEnabled = true,
     ChamsInnerColor = Color3.fromRGB(102, 60, 153),
     ChamsOuterColor = Color3.fromRGB(0, 0, 0),
     ChamsInnerTransparency = 0.5,
     ChamsOuterTransparency = 0.2,
 
 
-    TextEnabled = false,
+    TextEnabled = true,
     TextColor = Color3.fromRGB(255, 255, 255),
     TextLayout = {
         ['nametag']  = { enabled = true, position = 'top', order = 1 },
         ['name']     = { enabled = true, position = 'top', order = 2 },
         ['health']   = { enabled = true, position = 'left', order = 1, bar = 'health' },
-        ['armor']    = { enabled = false, position = 'left', order = 2, bar = 'armor' },
         ['tool']     = { enabled = true, position = 'bottom', suffix = '', prefix = '', order = 1 },
         ['distance'] = { enabled = false, position = 'bottom', suffix = 'm', order = 2 },
     },
 
     BarLayout = {
         ['health'] = { enabled = true, position = 'left', order = 1, color_empty = Color3.fromRGB(176, 84, 84), color_full = Color3.fromRGB(140, 250, 140) },
-        ['armor']  = { enabled = false, position = 'left', order = 2, color_empty = Color3.fromRGB(58, 58, 97), color_full = Color3.fromRGB(72, 72, 250) }
     }
     
 }
@@ -97,7 +95,6 @@ function player:Check()
     local torso = character and character:FindFirstChild('UpperTorso')
     local humanoid = rootpart and character:FindFirstChild('Humanoid')
     local bodyeffects = character and character:FindFirstChild('BodyEffects')
-    local armor = bodyeffects and bodyeffects:FindFirstChild('Armor')
 
     if not humanoid or 0 >= humanoid.Health then
         return false
@@ -114,13 +111,11 @@ function player:Check()
         rootpart = rootpart,
         humanoid = humanoid,
         bodyeffects = bodyeffects,
-        armor = armor,
         position = screen_position,
         cframe = rootpart.CFrame * esp.CharacterOffset,
         health = humanoid.Health,
         maxhealth = humanoid.MaxHealth,
         healthfactor = humanoid.Health / humanoid.MaxHealth,
-        armorfactor = armor.Value / 200,
         distance = (rootpart.CFrame.p - camera.CFrame.p).magnitude
     }
     
@@ -312,17 +307,15 @@ function player:GetTextData(data)
     return {
         ['nametag']  = { text = self.nametag_text, enabled = self.nametag_enabled, color = self.nametag_color },
         ['name']     = { text = self.instance.DisplayName },
-        ['armor']    = { text = tostring(math.floor(data.armor.Value)), color = esp.BarLayout.armor.color_empty:lerp(esp.BarLayout.armor.color_full, data.armorfactor)},
         ['health']   = { text = tostring(math.floor(data.health)), color = esp.BarLayout.health.color_empty:lerp(esp.BarLayout.health.color_full, data.healthfactor) },
         ['distance'] = { text = tostring(math.floor(data.distance)) },
         ['tool']     = { text = tool and tool.Name, enabled = tool ~= nil }
     }
 end
 
-function player:GetBarData(data) -- progress should be a number 0-1, you can get this by doing value / maxvalue aka armor / maxarmor
+function player:GetBarData(data) -- progress should be a number 0-1, you can get this by doing value
     return {
         ['health'] = { progress = data.healthfactor },
-        ['armor'] = { progress = data.armorfactor }
     }
 end
 
