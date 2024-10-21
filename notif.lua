@@ -73,7 +73,7 @@ function Notifications:Notification(message, duration, color, flash)
 
 	local TextLabel = Instance.new("TextLabel")
 	TextLabel.Name = "TextLabel"
-	TextLabel.Font = Enum.Font.GothamBold
+	TextLabel.Font = Enum.Font.RobotoMono
 	TextLabel.Text = message
 	TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 	TextLabel.TextSize = 13
